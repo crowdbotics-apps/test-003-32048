@@ -23,6 +23,11 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
+    sex = models.CharField(
+        max_length=3,
+        null=True,
+        blank=True,
+    )
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
